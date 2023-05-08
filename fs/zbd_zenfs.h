@@ -137,6 +137,7 @@ class ZonedBlockDeviceBackend {
 enum class ZbdBackendType {
   kBlockDev,
   kZoneFS,
+  KLogicZone, // logical zone(Hybrid ZNS and SMR Zone)
 };
 
 class ZonedBlockDevice {

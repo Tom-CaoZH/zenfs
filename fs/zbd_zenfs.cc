@@ -180,6 +180,9 @@ ZonedBlockDevice::ZonedBlockDevice(std::string path, ZbdBackendType backend,
   } else if (backend == ZbdBackendType::kZoneFS) {
     zbd_be_ = std::unique_ptr<ZoneFsBackend>(new ZoneFsBackend(path));
     Info(logger_, "New zonefs backing: %s", zbd_be_->GetFilename().c_str());
+  } else if (backend == ZbdBackendType::kLogZone) {
+    // TODO
+    Info(logger_, "New file backing: %s", zbd_be_->GetFilename().c_str());
   }
 }
 
